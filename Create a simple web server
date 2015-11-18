@@ -1,0 +1,11 @@
+//terminal
+
+touch web1
+
+// web1
+
+var http = require("http");
+
+http.createServer(function (req, res){ //create Server
+    res.end("welcome to my server"); //end Response, can aslo("<h1>Welcome to my server!!!</h1>")
+}).listen(3000);  //set Port 3000

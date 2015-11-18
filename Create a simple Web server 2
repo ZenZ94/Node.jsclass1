@@ -1,0 +1,32 @@
+//return a folder in your web so 1st create a folder
+
+// terminal 
+touch web2.html
+
+// web2.html
+<h1>Welcome to my server!!!</h1>
+
+//web2
+var http = require("http");
+var fs = require("fs"); 
+http.createServer(function (req, res){ //create Server
+
+    var content ='';
+    fs.readFile("./web2.html", function (err, file) // create a readfile function
+    {
+        content += file; //read the content of the file which name web2.html
+        res.end(content); //end Response
+    });
+    
+    /*
+    the other way but u have to wait the time u set(5000=50sec).
+    setTimeout(function () {
+    res.end(content); // 
+    }, 5000);
+    */
+}).listen(3000);
+
+
+//terminal
+
+node web2 // to show it

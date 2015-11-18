@@ -1,4 +1,6 @@
 // terminal
+
+
 touch getweb
 
 //getweb
@@ -9,6 +11,12 @@ var request = require("request");
 
 http.createServer(function (req, res) {
     var content ='';
+    
+    // the other way:
+    // fs.readFile("./demo.html", function (err, file) { 
+    //     content += file;        
+    //     res.end(content);
+    // });
     
     request("http://www.csie.isu.edu.tw/upload/80203/index.html", function (err, response, body) { //the web u wan to get
         content += body;

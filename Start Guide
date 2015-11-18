@@ -1,0 +1,11 @@
+
+//terminal
+
+touch begin1.js             // build a begin1.js empty folder
+
+//begin1.js
+
+console.log("hello koding.com");     //cin in begin1.js, cout in terminal when u run the begin1.js
+
+
+node begin1.js               //run the begin1.js

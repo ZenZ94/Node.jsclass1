@@ -1,0 +1,25 @@
+//terminal
+
+sudo npm install -g learnyounode // wait for install
+learnyounode // choose the chapter u wan to pratice
+
+touch pratice // create a folder
+
+//pratice1
+
+//No.1 print the "HELLO WORLD" question
+console.log("HELLO WORLD") //  do the pratice 
+
+//terminal
+
+learnyounode verify program.js //verify your code if it's right
+learnyounode //back to menu
+
+//pratice1 (use the same folder or u coud create a new one)
+//No.2 baby steps question
+var sum=0;
+for(var i =2; i< process.argv.length; i++) {
+    sum += Number(process.argv[i]);
+}
+console.log(sum);
+

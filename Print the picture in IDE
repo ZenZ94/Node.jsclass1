@@ -1,0 +1,51 @@
+//terminal
+
+sudo npm install -g javascripting // install the javascripting stuff 
+//reference (https://github.com/sethvincent/javascripting#user-content-get-help)
+mkdir showimg //create a folder name showimg(u could name whatever u want)
+cd showimg// go into the folder, so now our order will effect to the showimg folder
+ npm init //create a package.js folder which under showimg, create the details of the showimg
+ npm install picture-tube --save // --save : install the npm into the package.json
+ wget (pictureURL) //download the png picture; ex: wget http://i.imgur.com/5X2wo.png
+ 
+ //reference website(https://github.com/substack/picture-tube#user-content-code)
+ 
+ touch index// create new folder under showimg
+ 
+ //index
+ 
+ var pictureTube = require('picture-tube');
+var tube = pictureTube();
+tube.pipe(process.stdout);
+ 
+var fs = require('fs');
+fs.createReadStream('http://img07.deviantart.net/1948/i/2014/216/0/9/dara__2ne1___png___1_by_kseniakang-d7kgypi.png').pipe(tube);
+
+// remember to save for change (ctrl+s)
+
+//package.js(add one more details in the package.js folder)
+"bin" :{ 
+      "show" : "./index.js" // create a order to show the image
+ },
+ 
+ //index
+ 
+ #!/usr/bin/env node
+ 
+var pictureTube = require('picture-tube')
+var tube = pictureTube();
+var url = process.argv[2] || process.argv[1];
+tube.pipe(process.stdout);
+
+var request = require("request");
+request.get(url).pipe(tube);
+
+//terminal
+
+chmod 775 index // change the competence of the index folder
+sudo npm link // link to the system
+
+show http://img07.deviantart.net/1948/i/2014/216/0/9/dara__2ne1___png___1_by_kseniakang-d7kgypi.png // show the image
+
+
+
